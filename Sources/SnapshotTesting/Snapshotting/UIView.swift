@@ -25,7 +25,8 @@
       precision: Float = 1,
       perceptualPrecision: Float = 1,
       size: CGSize? = nil,
-      traits: UITraitCollection = .init()
+      traits: UITraitCollection = .init(),
+      delay: TimeInterval? = nil
     )
       -> Snapshotting
     {
@@ -38,7 +39,8 @@
           drawHierarchyInKeyWindow: drawHierarchyInKeyWindow,
           traits: traits,
           view: view,
-          viewController: .init()
+          viewController: .init(),
+          delay: delay
         )
       }
     }
