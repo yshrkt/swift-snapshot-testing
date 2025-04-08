@@ -994,6 +994,8 @@
               renderer(bounds: view.bounds, for: traits).image { ctx in
                 if drawHierarchyInKeyWindow {
                   view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+                } else if let presentation = view.layer.presentation() {
+                  presentation.render(in: ctx.cgContext)
                 } else {
                   view.layer.render(in: ctx.cgContext)
                 }
